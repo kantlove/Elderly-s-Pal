@@ -1,0 +1,30 @@
+﻿<List x:TypeArguments="mskbm:ExperienceOptionModel"
+      xmlns="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+      xmlns:mskbm="clr-namespace:NiceDreamers.Windows.Models;assembly=WindowsClient"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <mskbm:ExperienceOptionModel 
+        Name="PICTURE" 
+        ImageUri="/Content/Picture/picture_icon.png"
+        OverlayImageUri=""
+        NavigableContextName="Picture" 
+        NavigableContextParameter="" />
+    <mskbm:ExperienceOptionModel 
+        Name="MUSIC" 
+        ImageUri="/Content/Picture/music.png"
+        OverlayImageUri=""
+        NavigableContextName="MusicScreen" 
+        NavigableContextParameter="" />
+    <mskbm:ExperienceOptionModel 
+        Name="WATCHTV" 
+        ImageUri="/Content/Picture/tv.png"
+        OverlayImageUri=""
+        NavigableContextName="WatchTV" 
+        NavigableContextParameter="" />
+    <mskbm:ExperienceOptionModel 
+        Name="News" 
+        ImageUri="/Content/Picture/news.jpg"
+        OverlayImageUri=""
+        NavigableContextName="NewsCategory" 
+        NavigableContextParameter="" />
+</List>

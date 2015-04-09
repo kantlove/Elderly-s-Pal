@@ -1,0 +1,63 @@
+﻿<Window x:Class="StreamingTV.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wpfMediaKit="clr-namespace:WPFMediaKit.DirectShow.Controls;assembly=WPFMediaKit"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+      <!--  <wpf:VlcControl x:Name="myVlcControl"/>
+   
+        <Grid>
+        
+            <Grid.Background>
+                <VisualBrush Stretch="Uniform">
+                    <VisualBrush.Visual>
+                        <Image Source="{Binding ElementName=myVlcControl, Path=VideoSource}" />
+                    </VisualBrush.Visual>
+                </VisualBrush >
+            </Grid.Background>
+        </Grid> -->
+        <wpfMediaKit:MediaUriElement x:Name="Player"                                     
+                                     MouseLeftButtonUp="Player_MouseLeftButtonUp"/>
+        <Grid x:Name="GridController" Height="100"
+              Background="Black"
+              VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox VerticalAlignment="Center" 
+                         x:Name="InputUrlTextBox"
+                         Margin="12" KeyUp="InputUrlTextBox_KeyUp"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
+                        Margin="0,0,12,0"
+                            Grid.Column="1"
+                        VerticalAlignment="Top">
+                    <Button Content ="Play" Width="80" Height="40" Margin="0,0,12,0"
+                            Click="Play_Click"/>
+                    <Button Content ="Pause" Width="80" Height="40"
+                            Click="Pause_Click"/>
+                </StackPanel>
+            </Grid>
+            
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="CurrentPosition"                       
+                       Foreground="White"/>
+                <Slider Grid.Column="1" VerticalAlignment="Center"
+                        x:Name="SliderProgress"
+                        ValueChanged="SliderProgress_OnValueChanged"
+                        MouseUp="SliderProgress_OnMouseUp" ManipulationCompleted="SliderProgress_ManipulationCompleted" MouseLeftButtonUp="SliderProgress_MouseLeftButtonUp"/>
+            </Grid>
+        </Grid>
+        
+    </Grid>
+</Window>

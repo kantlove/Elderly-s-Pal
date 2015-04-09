@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36C9D59D-98B0-4FC0-AD57-495FEBC2E849}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NiceDreamers.Windows</RootNamespace>
+    <AssemblyName>WindowsClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Coding4Fun.Kinect.Wpf">
+      <HintPath>..\packages\Coding4Fun.Kinect.Wpf.1.7.0\lib\Coding4Fun.Kinect.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Coding4Fun.Kinect.Wpf.1.7.0\lib\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Kinect, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Kinect.Toolkit">
+      <HintPath>..\packages\Microsoft.Kinect.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Kinect.Toolkit.Controls">
+      <HintPath>..\packages\Microsoft.Kinect.Toolkit.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Live, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFMediaKit">
+      <HintPath>..\packages\WPFMediaKit\WPFMediaKit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\KinectHovelButton.cs" />
+    <Compile Include="Controls\NavigationBanner.xaml.cs">
+      <DependentUpon>NavigationBanner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PromptControl.cs" />
+    <Compile Include="Controls\TransitioningContentControl.cs" />
+    <Compile Include="Controls\VideoPlayer.cs" />
+    <Compile Include="Converters\InvertibleBooleanToPromptStateConverter.cs" />
+    <Compile Include="Converters\InvertibleBooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\MultiplicationConverter.cs" />
+    <Compile Include="Converters\NegationConverter.cs" />
+    <Compile Include="Models\ArticleModel.cs" />
+    <Compile Include="Models\AsyncTask.cs" />
+    <Compile Include="Models\AttractImageModel.cs" />
+    <Compile Include="Models\NewsModel\Category.cs" />
+    <Compile Include="Models\ExperienceOptionModel.cs" />
+    <Compile Include="Models\HtmlDownloader.cs" />
+    <Compile Include="Models\NewsModel\Controller\DantriController.cs" />
+    <Compile Include="Models\NewsModel\Controller\VnexpressController.cs" />
+    <Compile Include="Models\NewsModel\ItemTag.cs" />
+    <Compile Include="Models\NewsModel\NewsItem.cs" />
+    <Compile Include="Models\NewsModel\NewsItemList.cs" />
+    <Compile Include="Models\NewsModel.cs" />
+    <Compile Include="Models\SuatChieuModel.cs" />
+    <Compile Include="Models\TVChannelModel.cs" />
+    <Compile Include="Models\MusicModel.cs" />
+    <Compile Include="Navigation\DefaultNavigableContexts.cs" />
+    <Compile Include="Navigation\ExportNavigableAttribute.cs" />
+    <Compile Include="Navigation\IExportNavigableMetadata.cs" />
+    <Compile Include="Navigation\INavigableContext.cs" />
+    <Compile Include="Navigation\NavigationManager.cs" />
+    <Compile Include="Navigation\TimeCounter.cs" />
+    <Compile Include="Utilities\AttributeExtensions.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Utilities\CommandOnEventAssociation.cs" />
+    <Compile Include="Utilities\CommandOnEventHelper.cs" />
+    <Compile Include="Utilities\EngagementStateManager.cs" />
+    <Compile Include="Utilities\EventQueueSection.cs" />
+    <Compile Include="Utilities\MouseMovementDetector.cs" />
+    <Compile Include="Utilities\NavigationHelper.cs" />
+    <Compile Include="Utilities\PackUriHelper.cs" />
+    <Compile Include="Utilities\PromptState.cs" />
+    <Compile Include="Utilities\UserActivityMeter.cs" />
+    <Compile Include="Utilities\UserActivityRecord.cs" />
+    <Compile Include="Utilities\VisualStateHelper.cs" />
+    <Compile Include="Utilities\WindowBezelHelper.cs" />
+    <Compile Include="ViewModels\AttractScreenViewModel.cs" />
+    <Compile Include="ViewModels\HealthReportViewModel.cs" />
+    <Compile Include="ViewModels\HomeScreenViewModel.cs" />
+    <Compile Include="ViewModels\KinectController.cs" />
+    <Compile Include="ViewModels\MusicScreenViewModel.cs" />
+    <Compile Include="ViewModels\NewsCategoryViewModel.cs" />
+    <Compile Include="ViewModels\NewsScreenViewModel.cs" />
+    <Compile Include="ViewModels\PictureViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\WatchTVViewModel.cs" />
+    <Compile Include="Views\AttractScreenView.xaml.cs">
+      <DependentUpon>AttractScreenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HealthReportView.xaml.cs">
+      <DependentUpon>HealthReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomeScreenView.xaml.cs">
+      <DependentUpon>HomeScreenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MusicScreenView.xaml.cs">
+      <DependentUpon>MusicScreenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewsCategoryView.xaml.cs">
+      <DependentUpon>NewsCategoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewsScreenView.xaml.cs">
+      <DependentUpon>NewsScreenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PictureView.xaml.cs">
+      <DependentUpon>PictureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WatchTVView.xaml.cs">
+      <DependentUpon>WatchTVView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Common\StandardStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HealthReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MusicScreenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewsCategoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewsScreenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PictureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WatchTVView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Content\HomeScreen\HomeScreenContent.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Content\AttractScreen\AttractScreenContent.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Include="Controls\KinectButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\NavigationBanner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PromptControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TransitioningContentControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\VideoPlayerStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ViewDataTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AttractScreenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HomeScreenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Navigation\button-enter.wav" />
+    <Resource Include="Content\Navigation\button-select.wav" />
+    <Resource Include="Content\Navigation\logo.png" />
+    <Resource Include="Icon.ico" />
+    <Resource Include="Content\HomeScreen\01.png" />
+    <Resource Include="Content\HomeScreen\02.png" />
+    <Resource Include="Content\HomeScreen\03.png" />
+    <Resource Include="Content\HomeScreen\04.png" />
+    <Resource Include="Content\HomeScreen\05.png" />
+    <Resource Include="Content\HomeScreen\06.png" />
+    <Resource Include="Content\HomeScreen\play-overlay.png" />
+    <Resource Include="Content\AttractScreen\bridge.png" />
+    <Resource Include="Content\AttractScreen\flower.png" />
+    <Resource Include="Content\AttractScreen\hall.png" />
+    <Resource Include="Content\AttractScreen\palmtree.png" />
+    <Resource Include="Content\AttractScreen\sunset.png" />
+    <Resource Include="Content\Picture\music.png" />
+    <Resource Include="Content\Picture\pic.jpg" />
+    <Resource Include="Content\Music\Image\Akon.jpg" />
+    <Resource Include="Content\Music\Icons\player_pause.png" />
+    <Resource Include="Content\Music\Icons\player_play.png" />
+    <Resource Include="Content\Music\Icons\player_stop.png" />
+    <Resource Include="Content\Music\Icons\player_pause_256.png" />
+    <Resource Include="Content\Music\Icons\player_play_256.png" />
+    <Resource Include="Content\Music\Icons\player_stop_256.png" />
+    <Resource Include="Content\Music\Image\buianhtuan.jpg" />
+    <Resource Include="Content\Music\Image\florida.jpg" />
+    <Resource Include="Content\Music\Image\lobo.jpg" />
+    <Resource Include="Content\Music\Image\maroon5.jpg" />
+    <Resource Include="Content\Music\Image\mr.siro.jpg" />
+    <Resource Include="Content\Music\Image\ongcaothang.jpg" />
+    <Content Include="Content\Music\Songs\DontMatter.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Content\Picture\tv.png" />
+    <Resource Include="Content\Picture\picture_icon.png" />
+    <Resource Include="Content\Picture\pic2.jpg" />
+    <Resource Include="Content\Picture\pic3.jpg" />
+    <Resource Include="Content\Picture\pic4.jpg" />
+    <Resource Include="Content\Picture\pic5.jpg" />
+    <Resource Include="Content\Picture\Media-Pause.png" />
+    <Resource Include="Content\Picture\Media-Play.png" />
+    <Resource Include="Content\Picture\Full-Screen-Collapse.png" />
+    <Resource Include="Content\Picture\Full-Screen-Expand.png" />
+    <Resource Include="Content\Picture\tvLogo\VTV1.png" />
+    <Resource Include="Content\Picture\tvLogo\VTV2.png" />
+    <Resource Include="Content\Picture\tvLogo\VTV3.png" />
+    <Resource Include="Content\Picture\tvLogo\VTV4.png" />
+    <Resource Include="Content\Picture\tvLogo\VTV5.png" />
+    <Resource Include="Content\Picture\tvLogo\VTV6.png" />
+    <Content Include="Content\Music\Songs\How Can I Tell Her.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Music\Songs\La La La.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Music\Songs\Lắng Nghe Nước Mắt.MP3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Music\Songs\Makes me wonder.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Music\Songs\Noi Tinh Yeu Ket Thuc.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Music\Songs\Whistle.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Content\Picture\Geometric_Colors.png" />
+    <Resource Include="Content\Picture\Glasses.png" />
+    <Resource Include="Content\Picture\headphone.png" />
+    <Resource Include="Content\Picture\2colors.png" />
+    <Resource Include="Content\Picture\Diamond-flowers.png" />
+    <Resource Include="Content\Picture\politics.jpg" />
+    <Resource Include="Content\Picture\leaves.jpg" />
+    <Resource Include="Content\Picture\news.jpg" />
+    <Resource Include="Content\Picture\science.jpg" />
+    <Resource Include="Content\Picture\tech.jpg" />
+    <Content Include="KinectInteraction180_32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="KinectInteraction180_64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

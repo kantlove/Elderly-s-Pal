@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="NiceDreamers.Windows.Views.NewsCategoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:k="http://schemas.microsoft.com/kinect/2013"
+             xmlns:u="clr-namespace:NiceDreamers.Windows.Utilities"
+             xmlns:c="clr-namespace:NiceDreamers.Windows.Controls"
+             xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             Background="{StaticResource BackgroundGradientBrush}"
+             u:VisualStateHelper.VisualStateProperty="{Binding VisualStateName}"
+             mc:Ignorable="d"
+             d:DesignHeight="720" d:DesignWidth="1368">
+    <Grid>
+            <Grid>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="360"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Grid>
+                        <k:KinectTileButton x:Name="KinectTileButtonWorldNews" Width="684" Height="360"
+                                    Command="{Binding GoToWorldNews}">
+                            <k:KinectTileButton.Background>
+                                <ImageBrush ImageSource="/WindowsClient;component/Content/AttractScreen/bridge.png"/>
+                            </k:KinectTileButton.Background>
+                        </k:KinectTileButton>
+                        <TextBlock Text="World News" Foreground="White" FontSize="60" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" FontFamily="Segoe WP SemiBold" IsHitTestVisible="False">
+                            <TextBlock.Effect>
+                                <DropShadowEffect BlurRadius="20" Opacity="0.9" ShadowDepth="0"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+                    <Grid>
+                        <k:KinectTileButton Width="684" Height="360" Command="{Binding GoToPoliticNews}">
+                            <k:KinectTileButton.Background>
+                                <ImageBrush ImageSource="/WindowsClient;component/Content/Picture/politics.jpg"/>
+                            </k:KinectTileButton.Background>
+                        </k:KinectTileButton>
+                        <TextBlock Text="Politics" Foreground="White" FontSize="60" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" FontFamily="Segoe WP SemiBold" IsHitTestVisible="False">
+                            <TextBlock.Effect>
+                                <DropShadowEffect BlurRadius="20" Opacity="0.9" ShadowDepth="0"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Grid>
+                        <k:KinectTileButton Width="456" Height="360" Command="{Binding GoToHealthNews}">
+                            <k:KinectTileButton.Background>
+                                <ImageBrush ImageSource="/WindowsClient;component/Content/Picture/leaves.jpg"/>
+                            </k:KinectTileButton.Background>
+                        </k:KinectTileButton>
+                        <TextBlock Text="Health" Foreground="White" FontSize="60" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" FontFamily="Segoe WP SemiBold" IsHitTestVisible="False">
+                            <TextBlock.Effect>
+                                <DropShadowEffect BlurRadius="20" Opacity="0.9" ShadowDepth="0"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+                    <Grid>
+                    <k:KinectTileButton Width="456" Height="360" Command="{Binding GoToScienceNews}">
+                        <k:KinectTileButton.Background>
+                                <ImageBrush ImageSource="/WindowsClient;component/Content/Picture/science.jpg"/>
+                        </k:KinectTileButton.Background>
+                    </k:KinectTileButton>
+                        <TextBlock Text="Science" Foreground="White" FontSize="60" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" FontFamily="Segoe WP SemiBold" IsHitTestVisible="False">
+                        <TextBlock.Effect>
+                                <DropShadowEffect BlurRadius="20" Opacity="0.9" ShadowDepth="0"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                    </Grid>
+                    <Grid>
+                        <k:KinectTileButton Width="456" Height="360" RenderTransformOrigin="0.5,0.5" Command="{Binding GoToTechNews}">
+                            <k:KinectTileButton.Background>
+                                <ImageBrush ImageSource="/WindowsClient;component/Content/Picture/tech.jpg" Stretch="UniformToFill">
+                                    <ImageBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleY="1" ScaleX="1"/>
+                                            <SkewTransform AngleY="0" AngleX="0" CenterY="0.5" CenterX="0.5"/>
+                                            <RotateTransform Angle="0" CenterY="0.5" CenterX="0.5"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </ImageBrush.RelativeTransform>
+                                </ImageBrush>
+                            </k:KinectTileButton.Background>
+                        </k:KinectTileButton>
+                        <TextBlock Text="Tech" Foreground="White" FontSize="60" HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" FontFamily="Segoe WP SemiBold" IsHitTestVisible="False">
+                            <TextBlock.Effect>
+                                <DropShadowEffect BlurRadius="20" Opacity="0.9" ShadowDepth="0"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+                </StackPanel>
+
+
+            </Grid>
+            <ContentPresenter Content="{Binding NavigationManager}" Margin="0,10,0,-10" />
+        </Grid>
+    </Grid>
+</UserControl>

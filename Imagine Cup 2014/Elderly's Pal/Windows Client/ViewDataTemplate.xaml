@@ -1,0 +1,45 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:n="clr-namespace:NiceDreamers.Windows.Navigation"
+    xmlns:vm="clr-namespace:NiceDreamers.Windows.ViewModels"
+    xmlns:v="clr-namespace:NiceDreamers.Windows.Views"
+    xmlns:c="clr-namespace:NiceDreamers.Windows.Controls">
+
+    <DataTemplate DataType="{x:Type n:NavigationManager}">
+        <c:NavigationBanner />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AttractScreenViewModel}">
+        <v:AttractScreenView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:HomeScreenViewModel}">
+        <v:HomeScreenView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:MusicScreenViewModel}">
+        <v:MusicScreenView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:PictureViewModel}">
+        <v:PictureView />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:WatchTVViewModel}">
+        <v:WatchTVView />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:NewsScreenViewModel}">
+        <v:NewsScreenView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:NewsCategoryViewModel}">
+        <v:NewsCategoryView />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:HealthReportViewModel}">
+        <v:HealthReportView />
+    </DataTemplate>
+
+</ResourceDictionary>
